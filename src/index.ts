@@ -1,9 +1,11 @@
 import { Prisma, PrismaClient } from '@prisma/client';
 import express from 'express';
+import cors from 'cors';
 
 const prisma = new PrismaClient();
 const app = express();
-
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.post(`/signup`, async (req, res) => {
