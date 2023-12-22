@@ -1,5 +1,7 @@
 FROM node:21-alpine
 
+ENV DATABASE_URL $DATABASE_URL
+
 # Create app directory
 WORKDIR /usr/src/app
 
